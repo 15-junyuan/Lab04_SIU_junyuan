@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
-public class Playermovement : MonoBehaviour
+public class Playermovement2 : MonoBehaviour
 { 
     public float speed;
     public bool currentLevel = false;
@@ -44,7 +44,7 @@ public class Playermovement : MonoBehaviour
 
             if(coin == 4)
             {      
-              SceneManager.LoadScene("GamePlay_Level2");
+              SceneManager.LoadScene("GameWin");
             }
         }
 
