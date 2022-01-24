@@ -8,6 +8,7 @@ public class Playermovement : MonoBehaviour
 { 
     public float speed;
     public bool currentLevel = false;
+    public AudioSource AudioSource;
     Rigidbody PlayerRb;
 
     //coin text/score
@@ -18,6 +19,7 @@ public class Playermovement : MonoBehaviour
     {
         PlayerRb = GetComponent<Rigidbody>();
         cointxt.text = "Coin Collected: " + coin;
+        AudioSource = GetComponent<AudioSource>();
     }
 
     // Update is called once per frame
@@ -41,7 +43,7 @@ public class Playermovement : MonoBehaviour
             coin++;
             cointxt.text = "Coin Collected: " + coin;
             Destroy(collision.gameObject);
-
+            AudioSource.Play();
             if(coin == 4)
             {      
               SceneManager.LoadScene("GamePlay_Level2");
